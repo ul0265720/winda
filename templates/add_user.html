@@ -1,0 +1,33 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="page-heading">
+          <h1>Dodaj użytkownika</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Add User Form Content -->
+<section>
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <!-- Render the Add User Form -->
+        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+        <!-- Przycisk Zatwierdź zmiany -->
+        <div class="d-flex justify-content-end mt-4">
+          <button type="submit" class="btn btn-primary">Zatwierdź zmiany</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "footer.html" %}

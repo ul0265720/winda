@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, IntegerField, SubmitField
+from wtforms import StringField, SubmitField, PasswordField, IntegerField, SubmitField, SelectField
 from wtforms.validators import DataRequired, URL, NumberRange
 from flask_ckeditor import CKEditorField
+from wtforms import DateField
 
 
 # WTForm for creating a blog post
@@ -12,7 +13,6 @@ class CreatePostForm(FlaskForm):
     body = CKEditorField("Treść", validators=[DataRequired()])
     submit = SubmitField("Opublikuj")
     
-
 
 # Create a form to register new users
 class RegisterForm(FlaskForm):
@@ -42,3 +42,32 @@ class EditProfileForm(FlaskForm):
     email = StringField('Email')
     password = PasswordField('Hasło')
     submit = SubmitField('Zapisz zmiany')
+
+class AddUserForm(FlaskForm):
+    login = StringField("login",validators=[DataRequired()])
+    password = PasswordField("password",[DataRequired()])
+    name= StringField("name",[DataRequired()])
+    last_name= StringField("last name",[DataRequired()])
+    city = StringField("city",[DataRequired()])
+    
+    postal_code = StringField("postal code",[DataRequired()])
+    street = StringField("street",[DataRequired()])
+    street_number = IntegerField("street number",[DataRequired()])
+    flat_number = IntegerField("flat number",[DataRequired()])
+    pesel = StringField("pesel",[DataRequired()])
+    birth_date = DateField("birth date",[DataRequired()])
+    email = StringField("email",[DataRequired()])
+
+class SearchForm(FlaskForm):
+    query = StringField('Query', validators=[DataRequired()])
+    submit = SubmitField('Search')
+    search_category = SelectField('Search Category', choices=[
+        ('name', 'Login'),
+        ('email', 'E-mail'),
+        ('last_name', 'Imię i nazwisko')
+    ], validators=[DataRequired()])
+
+
+
+   # sex = db.Column(db.String(10))
+

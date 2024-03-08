@@ -1,0 +1,56 @@
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header class="masthead">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+
+          <h1>Profil</h1>
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Dodaj link do CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Profil użytkownika</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.name}} {{user.last_name}}</h5>
+            <p class="card-text">login: {{ user.login }}</p>
+            <p class="card-text">E-mail: {{ user.email }}</p>
+            <p class="card-text">city: {{ user.city  }}</p>
+            <p class="card-text">postal_code: {{ user.postal_code }}</p>
+            <p class="card-text">role: {{ user.role }}</p>
+            <p class="card-text">street: {{ user.street }}</p>
+            <p class="card-text">street_number: {{ user.street_number }}</p>
+            <p class="card-text">flat_number: {{ user.flat_number }}</p>
+            <p class="card-text">pesel: {{ user.pesel }}</p>
+            <p class="card-text">birth_date: {{ user.birth_date }}</p>
+            <p class="card-text">sex: {{ user.sex }}</p>
+
+
+
+            <!-- Dodaj inne dane użytkownika, jeśli są dostępne -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% include "footer.html" %}
